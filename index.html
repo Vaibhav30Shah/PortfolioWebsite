@@ -11,10 +11,16 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Portfolio.</a>
+        <a href="#" class="logo"><img src="/images/V1.png" width="80px" height="70px" style="cursor: pointer; border-radius: 10%;"></a>
 
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
@@ -34,16 +40,17 @@
         <div class="home-content">
             <h3>Hello, I am</h3>
             <h1>Vaibhav Shah</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure similique est voluptatum sunt aliquid accusamus aliquam, animi rerum neque molestias recusandae quasi necessitatibus, nobis inventore voluptates earum repudiandae itaque? Suscipit.</p>
+            <p>Hello! I'm Vaibhav Shah, a dedicated and innovative software developer based in Bhuj, India. Currently pursuing Master of Technology in Computer Science and Engineering at Nirma University, Ahmedabad. I am set to post-graduate in June 2026. I have completed my Bachelor of Technology in Computer Science and Engineering at Indus University, Ahmedabad with an impressive CGPA of 9.82/10.0.
+            </p>
 
             <div class="social-media">
-                <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
-                <a href="#"><i class='bx bxl-github' ></i></a>
-                <a href="#"><i class='bx bxl-stack-overflow' ></i></a>
-                <a href="#"><i class='bx bxs-envelope' ></i></a>
+                <a href="https://www.linkedin.com/in/vaibhav-shah-2533371aa"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="https://github.com/Vaibhav30Shah"><i class='bx bxl-github' ></i></a>
+                <a href="https://stackoverflow.com/users/17882679/vaibhav-shah"><i class='bx bxl-stack-overflow' ></i></a>
+                <a href="mailto:shahvaibhav1428@gmail.com"><i class='bx bxs-envelope' ></i></a>
             </div>
 
-            <a href="#" class="btn">Download Curriculum Vitae(CV)</a>
+            <a href="./documents/UpdatesResume_v2.pdf" class="btn" download>Download Curriculum Vitae(CV)</a>
         </div>
 
         <div class="profession-container">
@@ -89,12 +96,16 @@
 
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
-            <h3>Hi! I'm here to help you your next Project!</h3>
+            <h3>Passionate Software Developer with a Focus on Innovation.</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo ullam minima officiis quaerat error tempora soluta unde, veniam officia, corrupti natus ipsum impedit atque quas inventore hic? Asperiores, quos blanditiis!
+                My journey in tech has been marked by significant experiences, including a transformative internship at MindArray Systems Pvt Ltd, where I engineered a lightweight Network Monitoring System that improved system performance by 40%. I'm well-versed in a variety of technologies, including Java, Go, Flutter, and more.
+
+                Beyond coding, I'm passionate about community service, having served as the Club Service Director for the Rotaract Club of Indus University. This role honed my leadership and organizational skills while making a positive impact on the community.
+
+                I'm always eager to take on new challenges and contribute to innovative projects. Whether it's developing efficient backend systems or creating user-friendly mobile applications, I'm ready to bring my skills, creativity, and dedication to the table.
             </p>
 
-            <a href="#" class="btn">Read More</a>
+            <a href="#" class="btn" data-popup="about">Read More</a>
         </div>
     </section>
 
@@ -108,23 +119,23 @@
         <div class="services-container">
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
-                <h3>Software Developer</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis sed, voluptas eum dicta vitae quod iste, fuga ratione optio accusamus voluptates exercitationem molestiae quas unde architecto laboriosam quam provident dignissimos.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3>Software Development</h3>
+                <p>Specialized in creating robust, scalable backend systems using Java, Go, and Vert.x. Expertise in reactive programming and multithreading for efficient data processing and system optimization.</p>
+                <a href="#" class="btn" data-popup="service1">Read More</a>
             </div>
 
             <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Software Developer</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis sed, voluptas eum dicta vitae quod iste, fuga ratione optio accusamus voluptates exercitationem molestiae quas unde architecto laboriosam quam provident dignissimos.</p>
-                <a href="#" class="btn">Read More</a>
+                <i class='bx bx-mobile-alt'></i>
+                <h3>Mobile App Development</h3>
+                <p>Skilled in developing cross-platform mobile applications using Flutter and Dart. Experience in creating user-friendly, responsive apps with seamless API integration and real-time data handling.</p>
+                <a href="#" class="btn" data-popup="service2">Read More</a>
             </div>
 
             <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Software Developer</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis sed, voluptas eum dicta vitae quod iste, fuga ratione optio accusamus voluptates exercitationem molestiae quas unde architecto laboriosam quam provident dignissimos.</p>
-                <a href="#" class="btn">Read More</a>
+                <i class='bx bx-network-chart'></i>
+                <h3>Network Solutions</h3>
+                <p>Proficient in designing and implementing network monitoring and management solutions. Experienced in working with SNMP protocols, ZeroMQ for messaging, and creating efficient network architectures.</p>
+                <a href="#" class="btn" data-popup="service3">Read More</a>
             </div>
         </div>
     </section>
@@ -133,15 +144,19 @@
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <h2 class="heading">
-            Latest <span>Project</span>
-
-            <div class="portfolio-container">
+            Latest <span>Projects</span>
+        </h2>            
+        <div class="portfolio-container">
                 <div class="portfolio-box">
                     <img src="images/img1.jpeg" alt=""/>
                     <div class="portfolio-layer">
                         <h4>Network Monitoring System</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis illum, ipsum vitae ullam amet. Distinctio aliquam voluptate quibusdam eos tempore, harum sint pariatur inventore ratione? Natus fugit voluptate mollitia.</p>
-                        <a href="#"><i class='bx bx-link' ></i></a>
+                        <p>A lightweight NMS using Java and Go, featuring reactive programming for efficient SNMP device monitoring.</p>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class='bx bxl-java'></i></div>
+                            <div class="tech-icon"><i class='bx bxl-go-lang'></i></div>
+                        </div>
+                        <a href="https://github.com/Vaibhav30Shah/NMS-Lite-Backend-Review"><i class='bx bx-link' ></i></a>
                     </div>
                 </div>
 
@@ -149,8 +164,12 @@
                     <img src="images/img2.jpg" alt=""/>
                     <div class="portfolio-layer">
                         <h4>Inventory Management System</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis illum, ipsum vitae ullam amet. Distinctio aliquam voluptate quibusdam eos tempore, harum sint pariatur inventore ratione? Natus fugit voluptate mollitia.</p>
-                        <a href="#"><i class='bx bx-link' ></i></a>
+                        <p>A Java-based console application for efficient inventory control and order management.</p>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class='bx bxl-java'></i></div>
+                            <div class="tech-icon"><i class='bx bx-data'></i></div>
+                        </div>
+                        <a href="https://github.com/Vaibhav30Shah/Project_Inventory_Management"><i class='bx bx-link' ></i></a>
                     </div>
                 </div>
 
@@ -158,8 +177,13 @@
                     <img src="images/img3.png" alt=""/>
                     <div class="portfolio-layer">
                         <h4>Food Delivery Application</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis illum, ipsum vitae ullam amet. Distinctio aliquam voluptate quibusdam eos tempore, harum sint pariatur inventore ratione? Natus fugit voluptate mollitia.</p>
-                        <a href="#"><i class='bx bx-link' ></i></a>
+                        <p>A Flutter-based mobile app with features like restaurant listings, menu management, and secure payments.</p>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class='bx bxl-flutter'></i></div>
+                            <div class="tech-icon"><i class='bx bxl-firebase'></i></div>
+                            <div class="tech-icon"><i class='bx bxl-mongodb'></i></div>
+                        </div>
+                        <a href="https://github.com/Vaibhav30Shah/Food_Delivery_Flutter"><i class='bx bx-link' ></i></a>
                     </div>
                 </div>
 
@@ -167,8 +191,12 @@
                     <img src="images/img4.jpeg" alt=""/>
                     <div class="portfolio-layer">
                         <h4>Astrology Application</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis illum, ipsum vitae ullam amet. Distinctio aliquam voluptate quibusdam eos tempore, harum sint pariatur inventore ratione? Natus fugit voluptate mollitia.</p>
-                        <a href="#"><i class='bx bx-link' ></i></a>
+                        <p>A mobile app providing personalized horoscopes, zodiac information, and astrological insights.</p>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class='bx bxl-android'></i></div>
+                            <div class="tech-icon"><i class='bx bxl-java'></i></div>
+                        </div>
+                        <a href="https://github.com/Vaibhav30Shah/AstrologyApp"><i class='bx bx-link' ></i></a>
                     </div>
                 </div>
 
@@ -176,8 +204,13 @@
                     <img src="images/img5.jpeg" alt=""/>
                     <div class="portfolio-layer">
                         <h4>Amusement Park Website</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis illum, ipsum vitae ullam amet. Distinctio aliquam voluptate quibusdam eos tempore, harum sint pariatur inventore ratione? Natus fugit voluptate mollitia.</p>
-                        <a href="#"><i class='bx bx-link' ></i></a>
+                        <p>An interactive website for an amusement park, featuring virtual tours, ticket booking, and attraction information.</p>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class='bx bx-code'></i></div>
+                            <div class="tech-icon"><i class='bx bxl-css3'></i></div>
+                            <div class="tech-icon"><i class='bx bxl-javascript'></i></div>
+                        </div>
+                        <a href="https://github.com/Vaibhav30Shah/AmusementParkWebsite"><i class='bx bx-link' ></i></a>
                     </div>
                 </div>
 
@@ -185,32 +218,33 @@
                     <img src="images/img6.jpeg" alt=""/>
                     <div class="portfolio-layer">
                         <h4>Live Cricket Score Application</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium veritatis illum, ipsum vitae ullam amet. Distinctio aliquam voluptate quibusdam eos tempore, harum sint pariatur inventore ratione? Natus fugit voluptate mollitia.</p>
-                        <a href="#"><i class='bx bx-link' ></i></a>
+                        <p>A Flutter app providing real-time cricket scores and match highlights for over 60 matches.</p>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class='bx bxl-flutter'></i></div>
+                            <div class="tech-icon"><i class='bx bx-cloud'></i></div>
+                        </div>
+                        <a href="https://github.com/Vaibhav30Shah/LiveCricketScore"><i class='bx bx-link' ></i></a>
                     </div>
                 </div>
             </div>
-        </h2>
     </section>
 
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2>Contact <span>Me!</span></h2>
+        <h2 class="heading">Contact <span>Me!</span></h2>
 
-        <form action="#">
+        <form id="contact-form">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Full Name" id="from_name" required>
+                <input type="email" placeholder="Email Address" id="from_email" required>
             </div>
-
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="text" placeholder="Mobile Number" id="from_phone">
+                <input type="text" placeholder="Email Subject" id="subject" required>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-
-            <input type="submit" value="Send Message" class="btn"/>
+            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
 
@@ -226,8 +260,20 @@
         </div>
     </footer>
 
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+
     <!-- Scroll reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Email JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Custom JS -->
     <script src="script.js"></script>
