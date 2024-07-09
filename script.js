@@ -170,3 +170,16 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             alert('Failed to send the message. Please try again later.');
         });
 });
+
+// Page views
+const pageviewsEl = document.getElementById('pageviews');
+updatePageViews();
+
+function updatePageViews() {
+  fetch('https://api.countapi.xyz/hit/127.0.0.1/pageviews')
+  .then(response => response.json())
+  .then(data => {
+    pageviewsEl.innerHTML = data.value;
+  })
+  .catch(error => console.error('Error:', error));
+}
