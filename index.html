@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vaibhav Shah | Full Stack Developer</title>
+  <title>Vaibhav Shah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
@@ -19,163 +19,186 @@
         extend: {
           fontFamily: { inter: ['Inter','sans-serif'], mono: ['Fira Code','monospace'] },
           colors: {
-            primary:   { DEFAULT:'#6366f1', light:'#818cf8', dark:'#4f46e5' },
-            accent:    { DEFAULT:'#06b6d4', light:'#67e8f9', dark:'#0891b2' },
-            surface:   { DEFAULT:'#0f172a', card:'#1e293b', border:'#334155' },
-          },
+            primary: { DEFAULT:'#6366f1', light:'#818cf8', dark:'#4f46e5' },
+            accent:  { DEFAULT:'#06b6d4', light:'#67e8f9', dark:'#0891b2' },
+          }
         }
       }
     }
   </script>
 </head>
 
-<body class="bg-[#0f172a] text-slate-200 font-inter overflow-x-hidden transition-colors duration-500">
+<body class="dark-mode">
 
 <div id="particles-js" class="fixed inset-0 z-0 pointer-events-none"></div>
 
-<!-- NAVBAR -->
+<!-- ===== NAVBAR ===== -->
 <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#home" class="font-mono text-2xl font-bold text-primary">
-      <span class="text-accent">&lt;</span>VS<span class="text-accent">/&gt;</span>
+  <div class="nav-container">
+    <a href="#home" class="logo font-mono font-bold">
+      <span class="text-accent-color">&lt;</span><span class="text-primary-color">VS</span><span class="text-accent-color">/&gt;</span>
     </a>
-    <nav id="navbar" class="hidden md:flex items-center gap-8">
-      <a href="#home"       class="nav-link text-sm font-medium text-slate-300 hover:text-primary transition-colors">Home</a>
-      <a href="#about"      class="nav-link text-sm font-medium text-slate-300 hover:text-primary transition-colors">About</a>
-      <a href="#skills"     class="nav-link text-sm font-medium text-slate-300 hover:text-primary transition-colors">Skills</a>
-      <a href="#experience" class="nav-link text-sm font-medium text-slate-300 hover:text-primary transition-colors">Experience</a>
-      <a href="#projects"   class="nav-link text-sm font-medium text-slate-300 hover:text-primary transition-colors">Projects</a>
-      <a href="#contact"    class="nav-link text-sm font-medium text-slate-300 hover:text-primary transition-colors">Contact</a>
+    <nav id="navbar" class="navbar">
+      <a href="#home"       class="nav-link">Home</a>
+      <a href="#about"      class="nav-link">About</a>
+      <a href="#skills"     class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects"   class="nav-link">Projects</a>
+      <a href="#contact"    class="nav-link">Contact</a>
     </nav>
-    <div class="flex items-center gap-4">
-      <button id="darkModeToggle" class="text-slate-300 hover:text-primary transition-colors text-xl">
+    <div class="nav-right">
+      <button id="darkModeToggle" class="dm-toggle" aria-label="Toggle dark mode">
         <i class="bx bx-moon"></i>
       </button>
-      <button id="menuBtn" class="md:hidden text-slate-300 text-2xl">
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">
         <i class="bx bx-menu"></i>
       </button>
     </div>
   </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-[#0f172a]/95 backdrop-blur border-t border-slate-700 px-6 py-4 flex-col gap-4">
-    <a href="#home"       class="block text-slate-300 hover:text-primary py-2">Home</a>
-    <a href="#about"      class="block text-slate-300 hover:text-primary py-2">About</a>
-    <a href="#skills"     class="block text-slate-300 hover:text-primary py-2">Skills</a>
-    <a href="#experience" class="block text-slate-300 hover:text-primary py-2">Experience</a>
-    <a href="#projects"   class="block text-slate-300 hover:text-primary py-2">Projects</a>
-    <a href="#contact"    class="block text-slate-300 hover:text-primary py-2">Contact</a>
+  <!-- Mobile Nav -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#home"       class="mob-link">Home</a>
+    <a href="#about"      class="mob-link">About</a>
+    <a href="#skills"     class="mob-link">Skills</a>
+    <a href="#experience" class="mob-link">Experience</a>
+    <a href="#projects"   class="mob-link">Projects</a>
+    <a href="#contact"    class="mob-link">Contact</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
-  <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
-    <div>
-      <div class="inline-flex items-center gap-2 bg-[#6366f1]/10 border border-[#6366f1]/30 rounded-full px-4 py-1.5 mb-6 text-sm text-[#6366f1] font-mono">
-        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-        Available for opportunities
+<!-- ===== HERO ===== -->
+<section id="home" class="hero-section">
+  <div class="hero-inner">
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="avail-badge" data-aos="fade-down">
+        <span class="pulse-dot"></span>Available for opportunities
       </div>
-      <h3 class="text-xl text-slate-400 mb-2 font-mono" data-aos="fade-up">Hello, I'm</h3>
-      <h1 class="text-5xl lg:text-7xl font-black mb-4 leading-tight" data-aos="fade-up" data-aos-delay="100">
-        <span class="text-white">Vaibhav</span>
-        <span class="block text-gradient">Shah</span>
+      <p class="hero-sub" data-aos="fade-up">Hello, I'm</p>
+      <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">
+        Vaibhav<span class="block text-gradient">Shah</span>
       </h1>
-      <div class="text-2xl lg:text-3xl font-semibold text-slate-300 mb-6 h-10" data-aos="fade-up" data-aos-delay="200">
+      <div class="hero-typed" data-aos="fade-up" data-aos-delay="200">
         <span id="typed-text"></span>
       </div>
-      <p class="text-slate-400 text-lg leading-relaxed max-w-xl mb-8" data-aos="fade-up" data-aos-delay="300">
-        M.Tech CSE @ Nirma University. Building reactive backends, cross-platform mobile apps, and full-stack web solutions. Currently interning at <span class="text-[#06b6d4] font-semibold">Infineon Technologies</span>.
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="300">
+        M.Tech CSE @ Nirma University. Building reactive backends, cross-platform mobile apps,
+        and full-stack web solutions. Currently interning at
+        <span class="text-accent-color font-semibold">Infineon Technologies</span>.
       </p>
-      <div class="flex gap-4 mb-8" data-aos="fade-up" data-aos-delay="400">
-        <a href="https://www.linkedin.com/in/vaibhav-shah-2533371aa/" target="_blank" class="social-btn"><i class="bx bxl-linkedin text-xl"></i></a>
-        <a href="https://github.com/Vaibhav30Shah/" target="_blank" class="social-btn"><i class="bx bxl-github text-xl"></i></a>
-        <a href="https://leetcode.com" target="_blank" class="social-btn"><i class="bx bx-code-alt text-xl"></i></a>
-        <a href="https://stackoverflow.com/users/17882679/vaibhav-shah" target="_blank" class="social-btn"><i class="bx bxl-stack-overflow text-xl"></i></a>
-        <a href="mailto:director@vsoftxpert.in" class="social-btn"><i class="bx bx-envelope text-xl"></i></a>
+      <div class="social-row" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://www.linkedin.com/in/vaibhav-shah-2533371aa/" target="_blank" class="social-btn"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/Vaibhav30Shah/" target="_blank" class="social-btn"><i class="bx bxl-github"></i></a>
+        <a href="https://leetcode.com" target="_blank" class="social-btn"><i class="bx bx-code-alt"></i></a>
+        <a href="https://stackoverflow.com/users/17882679/vaibhav-shah" target="_blank" class="social-btn"><i class="bx bxl-stack-overflow"></i></a>
+        <a href="mailto:director@vsoftxpert.in" class="social-btn"><i class="bx bx-envelope"></i></a>
       </div>
-      <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="500">
-        <a href="Vaibhav_CV_24MCE023_sem4_v1.pdf" download class="btn-primary">
-          <i class="bx bx-download mr-2"></i>Download CV
+      <div class="cta-row" data-aos="fade-up" data-aos-delay="500">
+        <a href="./documents/Vaibhav_CV_24MCE023_sem4_v1.pdf" download class="btn-primary">
+          <i class="bx bx-download"></i> Download CV
         </a>
         <a href="#contact" class="btn-outline">
-          <i class="bx bx-send mr-2"></i>Hire Me
+          <i class="bx bx-send"></i> Hire Me
         </a>
       </div>
     </div>
-    <!-- Animated Code Block -->
-    <div class="relative flex justify-center items-center" data-aos="fade-left" data-aos-delay="300">
-      <div class="relative">
-        <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#6366f1]/30 to-[#06b6d4]/20 blur-3xl animate-glow"></div>
-        <div class="relative bg-[#1e293b] border border-slate-700 rounded-3xl p-6 font-mono text-sm shadow-2xl min-w-[320px] lg:min-w-[420px] animate-float">
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-3 h-3 rounded-full bg-red-400"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-            <div class="w-3 h-3 rounded-full bg-green-400"></div>
-            <span class="ml-2 text-slate-500 text-xs">vaibhav.java</span>
+    <!-- Right: animated code card -->
+    <div class="hero-right" data-aos="fade-left" data-aos-delay="300">
+      <div class="code-card-wrap">
+        <div class="code-glow"></div>
+        <div class="code-card animate-float">
+          <div class="code-titlebar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="code-filename">vaibhav.java</span>
           </div>
-          <pre class="text-slate-300 leading-7 text-xs lg:text-sm overflow-x-auto"><code><span class="text-pink-400">class</span> <span class="text-yellow-300">Developer</span> {
-  <span class="text-pink-400">String</span> name    = <span class="text-green-400">"Vaibhav Shah"</span>;
-  <span class="text-pink-400">String</span> degree  = <span class="text-green-400">"M.Tech CSE"</span>;
-  <span class="text-pink-400">String</span> company = <span class="text-green-400">"Infineon Technologies"</span>;
+          <pre class="code-body"><code><span class="c-kw">class</span> <span class="c-cls">Developer</span> {
+  <span class="c-kw">String</span> name    = <span class="c-str">"Vaibhav Shah"</span>;
+  <span class="c-kw">String</span> degree  = <span class="c-str">"M.Tech CSE"</span>;
+  <span class="c-kw">String</span> company = <span class="c-str">"Infineon Technologies"</span>;
 
-  <span class="text-pink-400">String[]</span> stack = {
-    <span class="text-green-400">"Java"</span>, <span class="text-green-400">"Go"</span>, <span class="text-green-400">"C#"</span>,
-    <span class="text-green-400">"Vue.js"</span>, <span class="text-green-400">"Dotnet"</span>, <span class="text-green-400">"Flutter"</span>
+  <span class="c-kw">String[]</span> stack = {
+    <span class="c-str">"Java"</span>, <span class="c-str">"Go"</span>, <span class="c-str">"C#"</span>,
+    <span class="c-str">"Vue.js"</span>, <span class="c-str">"Dotnet"</span>, <span class="c-str">"Flutter"</span>
   };
 
-  <span class="text-[#06b6d4]">boolean</span> passionForCode = <span class="text-orange-400">true</span>;
-  <span class="text-[#06b6d4]">int</span>     leetcodeSolved = <span class="text-orange-400">200</span>;
+  <span class="c-acc">boolean</span> passionForCode = <span class="c-num">true</span>;
+  <span class="c-acc">int</span>     leetcodeSolved = <span class="c-num">200</span>;
 }</code></pre>
         </div>
-        <div class="absolute -top-4 -right-4 bg-[#6366f1] rounded-2xl px-3 py-1.5 text-xs font-semibold shadow-lg animate-bounce">Java 17</div>
-        <div class="absolute -bottom-4 -left-4 bg-[#06b6d4]/90 text-slate-900 rounded-2xl px-3 py-1.5 text-xs font-semibold shadow-lg animate-bounce" style="animation-delay:.5s">Vue.js 3</div>
+        <div class="float-badge top-right animate-bounce-badge">Java 17</div>
+        <div class="float-badge bottom-left animate-bounce-badge delay-500">Vue.js 3</div>
       </div>
     </div>
   </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 animate-bounce">
-    <span class="text-xs font-mono">scroll</span>
-    <i class="bx bx-chevron-down text-xl"></i>
+  <div class="scroll-hint">
+    <span>scroll</span><i class="bx bx-chevron-down"></i>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="relative py-24 px-6">
-  <div class="max-w-7xl mx-auto relative z-10">
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section-pad">
+  <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="section-tag">Get to know me</span>
       <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
     </div>
-    <div class="grid lg:grid-cols-2 gap-16 items-center mt-12">
-      <div class="flex flex-col items-center gap-8" data-aos="fade-right">
-        <div class="relative">
-          <div class="w-64 h-64 rounded-3xl bg-gradient-to-br from-[#6366f1] to-[#06b6d4] p-1 animate-glow">
-            <div class="w-full h-full rounded-3xl bg-[#1e293b] flex items-center justify-content-center overflow-hidden flex items-center justify-center">
-              <i class="bx bx-user-circle text-9xl text-[#6366f1]/40"></i>
+    <div class="about-grid">
+      <!-- Left: avatar + stats -->
+      <div class="about-left" data-aos="fade-right">
+        <div class="avatar-wrap">
+          <div class="avatar-ring animate-glow">
+            <div class="avatar-inner">
+              <img src="images/PortfolioProfilePicture.jpeg" alt="Vaibhav Shah" class="avatar-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+              <div class="avatar-fallback"><i class="bx bx-user"></i></div>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4 w-full max-w-sm">
-          <div class="stat-card"><div class="text-3xl font-black text-[#6366f1]">200+</div><div class="text-sm text-slate-400">LeetCode Solved</div></div>
-          <div class="stat-card"><div class="text-3xl font-black text-[#06b6d4]">8.82</div><div class="text-sm text-slate-400">M.Tech CGPA</div></div>
-          <div class="stat-card"><div class="text-3xl font-black text-[#6366f1]">9.70</div><div class="text-sm text-slate-400">B.Tech CGPA</div></div>
-          <div class="stat-card"><div class="text-3xl font-black text-[#06b6d4]">5+</div><div class="text-sm text-slate-400">Projects Built</div></div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num text-primary-color">200+</div>
+            <div class="stat-label">LeetCode Solved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num text-accent-color">8.82</div>
+            <div class="stat-label">M.Tech CGPA</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num text-primary-color">9.70</div>
+            <div class="stat-label">B.Tech CGPA</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num text-accent-color">7+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
         </div>
       </div>
-      <div data-aos="fade-left">
-        <h3 class="text-3xl font-bold mb-4">Full Stack Developer & <span class="text-gradient">Reactive Systems Enthusiast</span></h3>
-        <p class="text-slate-400 leading-relaxed mb-4">
-          I'm Vaibhav Shah, a passionate software developer from Bhuj, India. Currently pursuing my M.Tech in Computer Science & Engineering at <span class="text-[#06b6d4] font-medium">Nirma University, Ahmedabad</span> (graduating June 2026).
+      <!-- Right -->
+      <div class="about-right" data-aos="fade-left">
+        <h3 class="about-heading">
+          Full Stack Developer &amp; <span class="text-gradient">Reactive Systems Enthusiast</span>
+        </h3>
+        <p class="about-para">
+          I'm Vaibhav Shah, a passionate software developer from Bhuj, India. Currently pursuing
+          my M.Tech in Computer Science &amp; Engineering at
+          <span class="text-accent-color font-semibold">Nirma University, Ahmedabad</span>
+          (graduating June 2026).
         </p>
-        <p class="text-slate-400 leading-relaxed mb-6">
-          I'm currently a Full Stack Developer Intern at <span class="text-[#06b6d4] font-medium">Infineon Technologies India</span>, building enterprise-grade drag-and-drop report builders using Vue.js 3, .NET 10, and GraphQL.
+        <p class="about-para">
+          Currently a Full Stack Developer Intern at
+          <span class="text-accent-color font-semibold">Infineon Technologies India</span>,
+          building enterprise-grade drag-and-drop report builders using Vue.js 3, .NET 10, and GraphQL.
         </p>
-        <div class="grid grid-cols-2 gap-3 mb-8 text-sm">
-          <div class="info-item"><i class="bx bx-map-pin text-[#6366f1] mr-2"></i>Bhuj, Gujarat, India</div>
-          <div class="info-item"><i class="bx bx-envelope text-[#6366f1] mr-2"></i>director@vsoftxpert.in</div>
-          <div class="info-item"><i class="bx bx-phone text-[#6366f1] mr-2"></i>+91 9099931522</div>
-          <div class="info-item"><i class="bx bx-globe text-[#6366f1] mr-2"></i>vsoftxpert.in</div>
+        <div class="info-grid">
+          <div class="info-item"><i class="bx bx-map-pin text-primary-color"></i> Bhuj, Gujarat, India</div>
+          <div class="info-item"><i class="bx bx-envelope text-primary-color"></i> director@vsoftxpert.in</div>
+          <div class="info-item"><i class="bx bx-phone text-primary-color"></i> +91 9099931522</div>
+          <div class="info-item"><i class="bx bx-globe text-primary-color"></i> vsoftxpert.in</div>
         </div>
-        <div class="flex gap-4">
-          <a href="Vaibhav_CV_24MCE023_sem4_v1.pdf" download class="btn-primary"><i class="bx bx-download mr-2"></i>Download CV</a>
+        <div class="cta-row">
+          <a href="./documents/Vaibhav_CV_24MCE023_sem4_v1.pdf" download class="btn-primary">
+            <i class="bx bx-download"></i> Download CV
+          </a>
           <a href="#contact" class="btn-outline">Let's Talk</a>
         </div>
       </div>
@@ -183,273 +206,309 @@
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="relative py-24 px-6 bg-[#1e293b]/30">
-  <div class="max-w-7xl mx-auto relative z-10">
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section-pad alt-bg">
+  <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="section-tag">What I know</span>
       <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+    <div class="skills-grid">
       <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="skill-card-icon bg-[#6366f1]/10 text-[#6366f1]"><i class="bx bx-code-curly text-2xl"></i></div>
-        <h3 class="text-lg font-bold mb-4">Languages</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">C# 12</span><span class="skill-tag">Java 17</span>
-          <span class="skill-tag">Go</span><span class="skill-tag">C / C++</span>
-          <span class="skill-tag">Python</span><span class="skill-tag">Dart</span>
+        <div class="skill-icon primary-icon"><i class="bx bx-code-curly"></i></div>
+        <h3 class="skill-title">Languages</h3>
+        <div class="tags">
+          <span class="tag">C# 12</span><span class="tag">Java 17</span>
+          <span class="tag">Go</span><span class="tag">C / C++</span>
+          <span class="tag">Python</span><span class="tag">Dart</span>
         </div>
       </div>
       <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-card-icon bg-[#06b6d4]/10 text-[#06b6d4]"><i class="bx bx-layer text-2xl"></i></div>
-        <h3 class="text-lg font-bold mb-4">Frameworks & Tools</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">Vue.JS 3.0</span><span class="skill-tag">Dotnet 10</span>
-          <span class="skill-tag">GraphQL</span><span class="skill-tag">Vert.X</span>
-          <span class="skill-tag">ZeroMQ</span><span class="skill-tag">Flutter</span>
-          <span class="skill-tag">Denodo</span><span class="skill-tag">Git</span>
+        <div class="skill-icon accent-icon"><i class="bx bx-layer"></i></div>
+        <h3 class="skill-title">Frameworks &amp; Tools</h3>
+        <div class="tags">
+          <span class="tag">Vue.JS 3.0</span><span class="tag">Dotnet 10</span>
+          <span class="tag">GraphQL</span><span class="tag">Vert.X</span>
+          <span class="tag">ZeroMQ</span><span class="tag">Flutter</span>
+          <span class="tag">Denodo</span><span class="tag">Git</span>
         </div>
       </div>
       <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-card-icon bg-[#6366f1]/10 text-[#6366f1]"><i class="bx bx-cog text-2xl"></i></div>
-        <h3 class="text-lg font-bold mb-4">Dev Practices</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">Agile / SDLC</span><span class="skill-tag">Unit Testing</span>
-          <span class="skill-tag">XUnit</span><span class="skill-tag">Vitest</span>
-          <span class="skill-tag">Multithreading</span><span class="skill-tag">ML</span>
+        <div class="skill-icon primary-icon"><i class="bx bx-cog"></i></div>
+        <h3 class="skill-title">Dev Practices</h3>
+        <div class="tags">
+          <span class="tag">Agile / SDLC</span><span class="tag">Unit Testing</span>
+          <span class="tag">XUnit</span><span class="tag">Vitest</span>
+          <span class="tag">Multithreading</span><span class="tag">ML</span>
         </div>
       </div>
       <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="skill-card-icon bg-[#06b6d4]/10 text-[#06b6d4]"><i class="bx bx-data text-2xl"></i></div>
-        <h3 class="text-lg font-bold mb-4">Databases</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Firebase</span>
+        <div class="skill-icon accent-icon"><i class="bx bx-data"></i></div>
+        <h3 class="skill-title">Databases</h3>
+        <div class="tags">
+          <span class="tag">MySQL</span><span class="tag">MongoDB</span>
+          <span class="tag">Firebase</span>
         </div>
       </div>
-      <div class="skill-card md:col-span-2" data-aos="fade-up" data-aos-delay="400">
-        <div class="skill-card-icon bg-[#6366f1]/10 text-[#6366f1]"><i class="bx bx-award text-2xl"></i></div>
-        <h3 class="text-lg font-bold mb-4">Certifications</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag">Oracle – Generative AI Professional</span>
-          <span class="skill-tag">AWS – ML for NLP</span>
-          <span class="skill-tag">UoC – Cryptography & Crypto API</span>
+      <div class="skill-card col-span-2" data-aos="fade-up" data-aos-delay="400">
+        <div class="skill-icon primary-icon"><i class="bx bx-award"></i></div>
+        <h3 class="skill-title">Certifications</h3>
+        <div class="tags">
+          <span class="tag">Oracle – Generative AI Professional</span>
+          <span class="tag">AWS – ML for NLP</span>
+          <span class="tag">UoC – Cryptography &amp; Crypto API</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="relative py-24 px-6">
-  <div class="max-w-5xl mx-auto relative z-10">
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section-pad">
+  <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="section-tag">My journey</span>
       <h2 class="section-title">Work <span class="text-gradient">Experience</span></h2>
     </div>
-    <div class="mt-12 relative">
-      <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#6366f1] via-[#06b6d4] to-[#6366f1]/20 hidden md:block"></div>
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot bg-[#6366f1]"></div>
-        <div class="timeline-card">
-          <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+    <div class="timeline">
+      <!-- Entry 1 -->
+      <div class="tl-item" data-aos="fade-up">
+        <div class="tl-dot primary-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
             <div>
-              <h3 class="text-xl font-bold text-white">Full Stack Developer Intern</h3>
-              <p class="text-[#6366f1] font-semibold">Infineon Technologies India Pvt Ltd</p>
-              <p class="text-sm text-slate-500">Gandhinagar, IN</p>
+              <h3 class="tl-role">Full Stack Developer Intern</h3>
+              <div class="company-row">
+                <img src="./images/infineon_logo.svg" alt="Infineon" class="company-logo"/>
+                <p class="tl-company text-primary-color">Infineon Technologies India Pvt Ltd</p>
             </div>
-            <span class="badge-date">Jul 2025 – May 2026</span>
+              <p class="tl-location">GIFT City, Gandhinagar, IN</p>
+            </div>
+            <span class="date-badge">Jul 2025 – May 2026</span>
           </div>
-          <ul class="space-y-2 text-slate-400 text-sm">
-            <li class="flex items-start gap-2"><i class="bx bx-right-arrow-alt text-[#06b6d4] mt-0.5"></i>Built a dynamic report builder with drag-and-drop functionality for internal employees</li>
-            <li class="flex items-start gap-2"><i class="bx bx-right-arrow-alt text-[#06b6d4] mt-0.5"></i>Stack: Vue.JS 3.0, Dotnet 10, C# 12, GraphQL (HotChocolate)</li>
+          <ul class="tl-list">
+            <li><i class="bx bx-right-arrow-alt text-accent-color"></i>Built a dynamic report builder with drag-and-drop functionality for internal employees</li>
+            <li><i class="bx bx-right-arrow-alt text-accent-color"></i>Stack: Vue.JS 3.0, Dotnet 10, C# 12, GraphQL (HotChocolate)</li>
           </ul>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="tech-badge">Vue.js 3</span><span class="tech-badge">Dotnet 10</span>
-            <span class="tech-badge">C# 12</span><span class="tech-badge">GraphQL</span>
+          <div class="tech-tags">
+            <span class="tech-tag">Vue.js 3</span><span class="tech-tag">Dotnet 10</span>
+            <span class="tech-tag">C# 12</span><span class="tech-tag">GraphQL</span>
           </div>
         </div>
       </div>
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="timeline-dot bg-[#06b6d4]"></div>
-        <div class="timeline-card">
-          <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+      <!-- Entry 2 -->
+      <div class="tl-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="tl-dot accent-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
             <div>
-              <h3 class="text-xl font-bold text-white">Trainee Software Engineer</h3>
-              <p class="text-[#06b6d4] font-semibold">MindArray Systems Pvt Ltd</p>
-              <p class="text-sm text-slate-500">Ahmedabad, IN</p>
+              <h3 class="tl-role">Trainee Software Engineer</h3>
+              <div class="company-row">
+                <img src="./images/motadata_logo_1.svg" alt="Motadata" class="company-logo"/>
+                <p class="tl-company text-primary-color">Mindarray Systems Pvt Ltd(Motadata)</p>
             </div>
-            <span class="badge-date">Jan 2024 – Jun 2024</span>
+              <p class="tl-location">Ahmedabad, IN</p>
+            </div>
+            <span class="date-badge">Jan 2024 – Jun 2024</span>
           </div>
-          <ul class="space-y-2 text-slate-400 text-sm">
-            <li class="flex items-start gap-2"><i class="bx bx-right-arrow-alt text-[#6366f1] mt-0.5"></i>Engineered a lightweight NMS using reactive programming — 40% perf improvement</li>
-            <li class="flex items-start gap-2"><i class="bx bx-right-arrow-alt text-[#6366f1] mt-0.5"></i>Created a Go plugin for retrieving SNMP OIDs from network devices</li>
-            <li class="flex items-start gap-2"><i class="bx bx-right-arrow-alt text-[#6366f1] mt-0.5"></i>Integrated ZeroMQ messaging + Vert.x Eventbus within Agile SDLC</li>
+          <ul class="tl-list">
+            <li><i class="bx bx-right-arrow-alt text-primary-color"></i>Engineered a lightweight NMS using reactive programming — 40% performance improvement</li>
+            <li><i class="bx bx-right-arrow-alt text-primary-color"></i>Created a Go plugin for retrieving SNMP OIDs from network devices</li>
+            <li><i class="bx bx-right-arrow-alt text-primary-color"></i>Integrated ZeroMQ messaging + Vert.x Eventbus within Agile SDLC</li>
           </ul>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="tech-badge">Java 17</span><span class="tech-badge">Go</span>
-            <span class="tech-badge">Vert.X</span><span class="tech-badge">ZeroMQ</span><span class="tech-badge">SNMP</span>
+          <div class="tech-tags">
+            <span class="tech-tag">Java 17</span><span class="tech-tag">Go</span>
+            <span class="tech-tag">Vert.X</span><span class="tech-tag">ZeroMQ</span><span class="tech-tag">SNMP</span>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Education -->
     <div class="section-header mt-20" data-aos="fade-up">
       <span class="section-tag">My background</span>
       <h2 class="section-title">Edu<span class="text-gradient">cation</span></h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 mt-10">
+    <div class="edu-grid">
       <div class="edu-card" data-aos="fade-up">
-        <div class="edu-icon"><i class="bx bx-book-open text-2xl text-[#6366f1]"></i></div>
+        <div class="edu-icon primary-icon"><img src="./images/nu_logo.png" alt="Nirma University" class="company-logo"></div>
         <div>
-          <h3 class="font-bold text-lg">M.Tech – CSE</h3>
-          <p class="text-[#06b6d4] text-sm font-medium">Nirma University, Ahmedabad</p>
-          <p class="text-slate-500 text-xs mt-1">2024 – 2026 · CGPA: 8.82 / 10</p>
+          <h3 class="edu-degree">M.Tech – CSE</h3>
+          <p class="edu-inst text-accent-color">Nirma University, Ahmedabad</p>
+          <p class="edu-meta">2024 – 2026 · CGPA: 8.82 / 10</p>
         </div>
       </div>
       <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="edu-icon"><i class="bx bx-graduation text-2xl text-[#06b6d4]"></i></div>
+        <div class="edu-icon accent-icon"><img src="./images/iu_logo_crop.png" alt="Indus University" class="company-logo"></div>
         <div>
-          <h3 class="font-bold text-lg">B.Tech – CSE</h3>
-          <p class="text-[#6366f1] text-sm font-medium">Indus University, Ahmedabad</p>
-          <p class="text-slate-500 text-xs mt-1">2020 – 2024 · CGPA: 9.70 / 10</p>
+          <h3 class="edu-degree">B.Tech – CSE</h3>
+          <p class="edu-inst text-primary-color">Indus University, Ahmedabad</p>
+          <p class="edu-meta">2020 – 2024 · CGPA: 9.70 / 10</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="relative py-24 px-6 bg-[#1e293b]/30">
-  <div class="max-w-7xl mx-auto relative z-10">
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section-pad alt-bg">
+  <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="section-tag">What I've built</span>
       <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-8 mt-12">
-      <div class="project-card group" data-aos="fade-up">
-        <div class="project-header bg-gradient-to-br from-[#6366f1]/20 to-[#06b6d4]/10">
-          <i class="bx bx-table text-5xl text-[#6366f1] group-hover:scale-110 transition-transform duration-300"></i>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Dynamic Report Builder</h3>
-          <p class="text-slate-400 text-sm mb-4">Enterprise drag-and-drop report builder for Infineon's internal teams — create, display & save dynamic reports.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-badge">Vue.JS 3.0</span><span class="tech-badge">Dotnet 10</span>
-            <span class="tech-badge">C# 12</span><span class="tech-badge">GraphQL</span>
-          </div>
-          <span class="text-slate-600 text-xs flex items-center gap-1"><i class="bx bx-lock-alt"></i> Private Repo</span>
+    <div class="projects-grid">
+
+      <!-- 1 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-header indigo-grad"><i class="bx bx-table proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Dynamic Report Builder</h3>
+          <p class="proj-desc">Enterprise drag-and-drop report builder for Infineon's internal teams — create, display &amp; save dynamic reports seamlessly.</p>
+          <div class="tech-tags"><span class="tech-tag">Vue.JS 3.0</span><span class="tech-tag">Dotnet 10</span><span class="tech-tag">C# 12</span><span class="tech-tag">GraphQL</span></div>
+          <div class="proj-links"><span class="proj-private"><i class="bx bx-lock-alt"></i> Private Repo</span></div>
         </div>
       </div>
-      <div class="project-card group" data-aos="fade-up" data-aos-delay="100">
-        <div class="project-header bg-gradient-to-br from-[#06b6d4]/20 to-[#6366f1]/10">
-          <i class="bx bx-network-chart text-5xl text-[#06b6d4] group-hover:scale-110 transition-transform duration-300"></i>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Network Monitoring System</h3>
-          <p class="text-slate-400 text-sm mb-4">Lightweight NMS monitoring up to 30 SNMP devices using reactive event-driven architecture — 40% perf improvement.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-badge">Java 17</span><span class="tech-badge">Vert.X 4.5.7</span>
-            <span class="tech-badge">Go 1.21.9</span><span class="tech-badge">ZeroMQ</span>
-          </div>
-          <a href="https://github.com/Vaibhav30Shah/NMS-Lite-Backend-Review" target="_blank" class="project-link"><i class="bx bxl-github mr-1"></i>GitHub</a>
+
+      <!-- 2 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="proj-header cyan-grad"><i class="bx bx-network-chart proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Network Monitoring System</h3>
+          <p class="proj-desc">Lightweight NMS monitoring up to 30 SNMP devices using reactive event-driven architecture — 40% performance improvement.</p>
+          <div class="tech-tags"><span class="tech-tag">Java 17</span><span class="tech-tag">Vert.X 4.5.7</span><span class="tech-tag">Go 1.21.9</span><span class="tech-tag">ZeroMQ</span></div>
+          <div class="proj-links"><a href="https://github.com/Vaibhav30Shah/NMS-Lite-Backend-Review" target="_blank" class="proj-link"><i class="bx bxl-github"></i> GitHub</a></div>
         </div>
       </div>
-      <div class="project-card group" data-aos="fade-up" data-aos-delay="200">
-        <div class="project-header bg-gradient-to-br from-pink-500/20 to-[#6366f1]/10">
-          <i class="bx bx-microphone text-5xl text-pink-400 group-hover:scale-110 transition-transform duration-300"></i>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Speech Emotion Recognition</h3>
-          <p class="text-slate-400 text-sm mb-4">ML-powered classifier trained on RAVDESS, RAVDESS Song & TESS datasets — classifies 8 emotional states from audio.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-badge">Python</span><span class="tech-badge">Machine Learning</span>
-            <span class="tech-badge">Classification</span>
-          </div>
+
+      <!-- 3 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="proj-header pink-grad"><i class="bx bx-microphone proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Speech Emotion Recognition</h3>
+          <p class="proj-desc">ML-powered classifier trained on RAVDESS &amp; TESS datasets — classifies 8 emotional states from audio input.</p>
+          <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Machine Learning</span><span class="tech-tag">Classification</span></div>
+          <div class="proj-links"><span class="proj-private"><i class="bx bx-lock-alt"></i> Academic Project</span></div>
         </div>
       </div>
-      <div class="project-card group" data-aos="fade-up" data-aos-delay="300">
-        <div class="project-header bg-gradient-to-br from-green-500/20 to-[#06b6d4]/10">
-          <i class="bx bx-food-menu text-5xl text-green-400 group-hover:scale-110 transition-transform duration-300"></i>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-2">Food Delivery Application</h3>
-          <p class="text-slate-400 text-sm mb-4">Cross-platform app with 100+ restaurant listings, real-time order tracking, Firebase auth, and RazorPay payment integration.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="tech-badge">Flutter 3.10</span><span class="tech-badge">Dart</span>
-            <span class="tech-badge">Firebase</span><span class="tech-badge">MongoDB</span><span class="tech-badge">RazorPay</span>
-          </div>
-          <a href="https://github.com/Vaibhav30Shah/Food_Delivery_Flutter" target="_blank" class="project-link"><i class="bx bxl-github mr-1"></i>GitHub</a>
+
+      <!-- 4 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="proj-header green-grad"><i class="bx bx-food-menu proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Food Delivery Application</h3>
+          <p class="proj-desc">Cross-platform app with 100+ restaurant listings, real-time order tracking, Firebase auth, and RazorPay payment gateway.</p>
+          <div class="tech-tags"><span class="tech-tag">Flutter 3.10</span><span class="tech-tag">Dart</span><span class="tech-tag">Firebase</span><span class="tech-tag">MongoDB</span><span class="tech-tag">RazorPay</span></div>
+          <div class="proj-links"><a href="https://github.com/Vaibhav30Shah/Food_Delivery_Flutter" target="_blank" class="proj-link"><i class="bx bxl-github"></i> GitHub</a></div>
         </div>
       </div>
+
+      <!-- 5 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="proj-header orange-grad"><i class="bx bx-store proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Inventory Management System</h3>
+          <p class="proj-desc">Java-based console application for efficient inventory control and order management using multithreading.</p>
+          <div class="tech-tags"><span class="tech-tag">Java 17</span><span class="tech-tag">Multithreading</span></div>
+          <div class="proj-links"><a href="https://github.com/Vaibhav30Shah/Project_Inventory_Management" target="_blank" class="proj-link"><i class="bx bxl-github"></i> GitHub</a></div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="proj-header purple-grad"><i class="bx bx-star proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Astrology Application</h3>
+          <p class="proj-desc">Mobile app providing personalized horoscopes, zodiac information, and astrological insights for users.</p>
+          <div class="tech-tags"><span class="tech-tag">Android</span><span class="tech-tag">Java</span></div>
+          <div class="proj-links"><a href="https://github.com/Vaibhav30Shah/AstrologyApp" target="_blank" class="proj-link"><i class="bx bxl-github"></i> GitHub</a></div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="proj-header teal-grad"><i class="bx bx-carousel proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Amusement Park Website</h3>
+          <p class="proj-desc">Interactive website featuring virtual tours, ticket booking, and attraction information for an amusement park.</p>
+          <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span></div>
+          <div class="proj-links"><a href="https://github.com/Vaibhav30Shah/AmusementParkWebsite" target="_blank" class="proj-link"><i class="bx bxl-github"></i> GitHub</a></div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="proj-header red-grad"><i class="bx bx-cricket-ball proj-icon"></i></div>
+        <div class="proj-body">
+          <h3 class="proj-title">Live Cricket Score Application</h3>
+          <p class="proj-desc">Flutter app providing real-time cricket scores and match highlights for over 60 matches via live API integration.</p>
+          <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">REST API</span></div>
+          <div class="proj-links"><a href="https://github.com/Vaibhav30Shah/LiveCricketScore" target="_blank" class="proj-link"><i class="bx bxl-github"></i> GitHub</a></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="relative py-24 px-6">
-  <div class="max-w-4xl mx-auto relative z-10">
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section-pad">
+  <div class="container">
     <div class="section-header" data-aos="fade-up">
       <span class="section-tag">Get in touch</span>
       <h2 class="section-title">Contact <span class="text-gradient">Me</span></h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-12 mt-12 items-start">
-      <div data-aos="fade-right">
-        <p class="text-slate-400 leading-relaxed mb-8">Always open to discussing new opportunities, interesting projects, or just chatting about tech.</p>
-        <div class="space-y-4">
-          <a href="mailto:director@vsoftxpert.in" class="contact-info-item">
-            <div class="contact-icon"><i class="bx bx-envelope text-xl text-[#6366f1]"></i></div>
-            <div><div class="text-sm text-slate-500">Email</div><div class="font-medium">director@vsoftxpert.in</div></div>
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right">
+        <p class="contact-intro">Always open to discussing new opportunities, interesting projects, or just chatting about tech.</p>
+        <div class="contact-items">
+          <a href="mailto:director@vsoftxpert.in" class="contact-item">
+            <div class="c-icon primary-icon"><i class="bx bx-envelope"></i></div>
+            <div><p class="c-label">Email</p><p class="c-value">director@vsoftxpert.in</p></div>
           </a>
-          <a href="tel:+919099931522" class="contact-info-item">
-            <div class="contact-icon"><i class="bx bx-phone text-xl text-[#06b6d4]"></i></div>
-            <div><div class="text-sm text-slate-500">Phone</div><div class="font-medium">+91 9099931522</div></div>
+          <a href="tel:+919099931522" class="contact-item">
+            <div class="c-icon accent-icon"><i class="bx bx-phone"></i></div>
+            <div><p class="c-label">Phone</p><p class="c-value">+91 9099931522</p></div>
           </a>
-          <div class="contact-info-item">
-            <div class="contact-icon"><i class="bx bx-map text-xl text-[#6366f1]"></i></div>
-            <div><div class="text-sm text-slate-500">Location</div><div class="font-medium">Bhuj, Gujarat, India</div></div>
+          <div class="contact-item">
+            <div class="c-icon primary-icon"><i class="bx bx-map"></i></div>
+            <div><p class="c-label">Location</p><p class="c-value">Bhuj, Gujarat, India</p></div>
           </div>
         </div>
       </div>
-      <form id="contact-form" class="space-y-4" data-aos="fade-left">
-        <div class="grid grid-cols-2 gap-4">
-          <input type="text"  id="from_name"  placeholder="Your Name"   class="form-input" required/>
-          <input type="email" id="from_email" placeholder="Your Email"  class="form-input" required/>
+      <form id="contact-form" data-aos="fade-left">
+        <div class="form-row">
+          <input type="text"  id="from_name"  placeholder="Your Name"        class="form-input" required/>
+          <input type="email" id="from_email" placeholder="Your Email"       class="form-input" required/>
         </div>
-        <input type="tel"  id="from_phone" placeholder="Phone (optional)" class="form-input"/>
-        <input type="text" id="subject"    placeholder="Subject"          class="form-input" required/>
-        <textarea id="message" rows="5" placeholder="Your message..." class="form-input resize-none" required></textarea>
-        <button type="submit" class="btn-primary w-full justify-center">
-          <i class="bx bx-send mr-2"></i>Send Message
-        </button>
-        <p id="form-status" class="text-center text-sm hidden"></p>
+        <input type="tel"  id="from_phone" placeholder="Phone (optional)"  class="form-input"/>
+        <input type="text" id="subject"    placeholder="Subject"            class="form-input" required/>
+        <textarea id="message" rows="5"   placeholder="Your message..."    class="form-input" required></textarea>
+        <button type="submit" class="btn-primary w-full"><i class="bx bx-send"></i> Send Message</button>
+        <p id="form-status" class="form-status hidden"></p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="relative bg-[#1e293b] border-t border-slate-700 px-6 py-10 z-10">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <a href="#home" class="font-mono text-2xl font-bold">
-        <span class="text-[#06b6d4]">&lt;</span><span class="text-[#6366f1]">VS</span><span class="text-[#06b6d4]">/&gt;</span>
-      </a>
-      <div class="flex gap-6">
-        <a href="#home"     class="text-sm text-slate-400 hover:text-[#6366f1] transition-colors">Home</a>
-        <a href="#about"    class="text-sm text-slate-400 hover:text-[#6366f1] transition-colors">About</a>
-        <a href="#projects" class="text-sm text-slate-400 hover:text-[#6366f1] transition-colors">Projects</a>
-        <a href="#contact"  class="text-sm text-slate-400 hover:text-[#6366f1] transition-colors">Contact</a>
-      </div>
-      <div class="flex gap-4">
-        <a href="https://www.linkedin.com/in/vaibhav-shah-2533371aa/" target="_blank" class="social-btn-sm"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/Vaibhav30Shah/" target="_blank" class="social-btn-sm"><i class="bx bxl-github"></i></a>
-        <a href="mailto:director@vsoftxpert.in" class="social-btn-sm"><i class="bx bx-envelope"></i></a>
-      </div>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="#home" class="logo font-mono font-bold">
+      <span class="text-accent-color">&lt;</span><span class="text-primary-color">VS</span><span class="text-accent-color">/&gt;</span>
+    </a>
+    <div class="footer-links">
+      <a href="#home">Home</a><a href="#about">About</a>
+      <a href="#projects">Projects</a><a href="#contact">Contact</a>
     </div>
-    <div class="border-t border-slate-700 mt-8 pt-6 text-center text-slate-500 text-sm">
-      © <span id="currentYear"></span> Vaibhav Shah. Crafted with 💜 in India.
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/vaibhav-shah-2533371aa/" target="_blank" class="social-btn"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/Vaibhav30Shah/" target="_blank" class="social-btn"><i class="bx bxl-github"></i></a>
+      <a href="mailto:director@vsoftxpert.in" class="social-btn"><i class="bx bx-envelope"></i></a>
     </div>
+  </div>
+  <div class="footer-copy">
+    © <span id="currentYear"></span> Vaibhav Shah. All rights reserved.
   </div>
 </footer>
 
