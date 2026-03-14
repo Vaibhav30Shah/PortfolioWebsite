@@ -1,185 +1,131 @@
-//menu icon navbar
-let menuIcon=document.querySelector('#menu-icon');
-let navbar=document.querySelector('.navbar');
+/* ============================================
+   VAIBHAV SHAH PORTFOLIO — MAIN SCRIPT
+   ============================================ */
 
-menuIcon.onclick=()=>
-{
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
+(function () { emailjs.init("9bMm2wB1e7ybPEclK"); })();
 
-// Scroll Sections active links
-let sections=document.querySelectorAll('section');
-let navLinks=document.querySelectorAll('header nav a');
+document.addEventListener("DOMContentLoaded", () => {
 
-window.onscroll=()=>
-{
-    sections.forEach(sec=>
-        {
-        let top=window.scrollY;
-        let offset=sec.offsetTop-150;
-        let height=sec.offsetHeight;
-        let id=sec.getAttribute('id');
+  /* AOS */
+  AOS.init({ duration: 700, easing: "ease-out-cubic", once: false, offset: 60 });
 
-        if(top>=offset && top<offset+height)
-        {
-            navLinks.forEach(links=>
-            {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*='+id+']').classList.add('active');
-            })
-        }
-    });
+  /* Typed.js */
+  new Typed("#typed-text", {
+    strings: ["Full Stack Developer","Reactive Systems Engineer","Mobile App Developer","Backend Architect"],
+    typeSpeed: 60, backSpeed: 35, backDelay: 2000, loop: true, cursorChar: "|",
+  });
 
-    // Sticky Navbar
-    let header=document.querySelector('.header');
-
-    header.classList.toggle('sticky',window.scrollY>100);
-
-    // remove menu icon navbar when scroll or click navbar link
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-};
-
-// copyright year
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-
-
-// Dark Mode
-let darkModeIcon=document.querySelector('#darkMode-icon');
-
-darkModeIcon.onclick=()=>
-{
-    darkModeIcon.classList.toggle('bx-sun');
-    document.body.classList.toggle('dark-mode');
-};
-
-//Scroll reveal
-ScrollReveal({
-    reset:true,
-    distance:'80px',
-    duration:2000,
-    delay:200
-});
-
-ScrollReveal().reveal('.home.content, .heading',{origin:'top'});
-ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .contact form',{origin:'bottom'});
-ScrollReveal().reveal('.home-content h1, .about-img img',{origin:'left'});
-ScrollReveal().reveal('.home-content h3, .home-content p, .about-content',{origin:'right'});
-
-
-// Popup functionality
-const popup = document.getElementById('popup');
-const popupTitle = document.getElementById('popup-title');
-const popupText = document.getElementById('popup-text');
-const closeBtn = document.querySelector('.close');
-
-// Content for popups
-const popupContent = {
-    about: {
-        title: "More About Me",
-        text: "As a budding software engineer, I've had the opportunity to work on diverse projects that have honed my skills in various technologies. My experience ranges from creating a reactive Network Monitoring System that improved performance by 40%, to developing a Flutter-based live cricket score application.\n\nI'm proficient in languages such as Java, Go, Python, and Dart, and have hands-on experience with frameworks like Vert.X and Flutter. My technical toolkit also includes expertise in multithreading, ZeroMQ, RESTful APIs, and database technologies like MySQL and MongoDB.\n\nBeyond technical skills, I value community engagement and leadership. As the Club Service Director for the Rotaract Club, I led initiatives that made tangible differences in people's lives, from providing shelter to homeless individuals to distributing sanitary kits to schoolgirls.\n\nI'm constantly seeking to expand my knowledge and skills. My certifications in AWS Machine Learning for NLP and Cryptography showcase my commitment to staying at the forefront of technology trends.\n\nAs I approach the completion of my degree, I'm excited about the prospect of applying my skills and passion to real-world challenges, contributing to innovative solutions that make a difference."
+  /* Particles.js */
+  particlesJS("particles-js", {
+    particles: {
+      number:   { value: 60, density: { enable: true, value_area: 900 } },
+      color:    { value: ["#6366f1", "#06b6d4", "#818cf8"] },
+      shape:    { type: "circle" },
+      opacity:  { value: 0.35, random: true, anim: { enable: true, speed: .6, opacity_min: .1, sync: false } },
+      size:     { value: 2.5, random: true },
+      line_linked: { enable: true, distance: 140, color: "#6366f1", opacity: .15, width: 1 },
+      move:     { enable: true, speed: 1.2, direction: "none", random: true, out_mode: "out" },
     },
-    service1: {
-        title: "Software Development",
-        text: "As a backend developer, I specialize in creating high-performance, scalable server-side applications. My expertise includes:\n\n" +
-              "• Developing in Java 17 and Go 1.21.9, with a focus on creating efficient, concurrent systems\n" +
-              "• Utilizing Vert.x 4.5.7 for building reactive applications that can handle high loads with minimal resource usage\n" +
-              "• Implementing multithreading techniques to optimize performance and resource utilization\n" +
-              "• Designing and integrating RESTful APIs for seamless front-end and back-end communication\n" +
-              "• Working with messaging systems like ZeroMQ 4.5 for building distributed systems\n" +
-              "• Database design and management using MySQL and MongoDB\n\n" +
-              "Whether it's creating a new system from scratch or optimizing existing backends, I'm committed to delivering robust, efficient solutions that meet your business needs."
+    interactivity: {
+      detect_on: "canvas",
+      events:  { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+      modes:   { grab: { distance: 160, line_linked: { opacity: .4 } }, push: { particles_nb: 3 } },
     },
-    service2: {
-        title: "Mobile App Development",
-        text: "I offer comprehensive mobile application development services, focusing on creating engaging, user-friendly apps. My services include:\n\n" +
-              "• Developing cross-platform mobile applications using Flutter 3.10 and Dart 3.22.2\n" +
-              "• Creating responsive and intuitive user interfaces for optimal user experience\n" +
-              "• Integrating RESTful APIs and real-time data handling for dynamic content\n" +
-              "• Implementing secure authentication and data storage using Firebase\n" +
-              "• Integrating payment gateways like RazorPay for e-commerce functionality\n" +
-              "• Optimizing app performance for smooth operation on various devices\n\n" +
-              "From concept to deployment, I can help bring your mobile app ideas to life with efficient, scalable, and maintainable code."
-    },
-    service3: {
-        title: "Network Solutions",
-        text: "I specialize in creating efficient network monitoring and management solutions. My services in this area include:\n\n" +
-              "• Designing and implementing lightweight Network Monitoring Systems (NMS)\n" +
-              "• Developing custom plugins for retrieving system and interface OIDs from SNMP devices\n" +
-              "• Integrating messaging services like ZeroMQ for efficient inter-process communication\n" +
-              "• Implementing Vert.x Eventbus architecture for reactive, event-driven systems\n" +
-              "• Creating robust logging functionalities for effective debugging and system monitoring\n" +
-              "• Optimizing network architectures to reduce latency and improve overall performance\n\n" +
-              "Whether you need to monitor a small network or manage a large, complex system, I can provide tailored solutions to meet your specific requirements and improve your network's efficiency."
-    }
-};
+    retina_detect: true,
+  });
 
-// Open popup
-document.querySelectorAll('[data-popup]').forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const content = popupContent[button.dataset.popup];
-        popupTitle.textContent = content.title;
-        popupText.textContent = content.text;
-        popup.style.display = 'block';
-    });
-});
+  /* Sticky navbar + active links */
+  const header   = document.getElementById("header");
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-// Close popup
-closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
+  function onScroll() {
+    header.classList.toggle("scrolled", window.scrollY > 60);
+    let current = "";
+    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 180) current = sec.getAttribute("id"); });
+    navLinks.forEach(a => { a.classList.toggle("active", a.getAttribute("href") === "#" + current); });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-// Close popup when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target == popup) {
-        popup.style.display = 'none';
-    }
-});
+  /* Mobile menu */
+  const menuBtn    = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuIcon   = menuBtn.querySelector("i");
+  menuBtn.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    menuIcon.className = isOpen ? "bx bx-x" : "bx bx-menu";
+  });
+  mobileMenu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => { mobileMenu.classList.remove("open"); menuIcon.className = "bx bx-menu"; });
+  });
 
+  /* Dark/Light toggle */
+  const dmToggle = document.getElementById("darkModeToggle");
+  const dmIcon   = dmToggle.querySelector("i");
+  if (localStorage.getItem("theme") === "light") { document.body.classList.add("light-mode"); dmIcon.className = "bx bx-sun"; }
+  dmToggle.addEventListener("click", () => {
+    const isLight = document.body.classList.toggle("light-mode");
+    dmIcon.className = isLight ? "bx bx-sun" : "bx bx-moon";
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  });
 
-// form submit functionality
-// Initialize EmailJS
-(function() {
-    emailjs.init("9bMm2wB1e7ybPEclK");
-})();
+  /* Footer year */
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-// Handle form submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Get form data
-    var templateParams = {
-        from_name: document.getElementById('from_name').value,
-        from_email: document.getElementById('from_email').value,
-        from_phone: document.getElementById('from_phone').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
+  /* Contact form — EmailJS */
+  const form       = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+  const submitBtn  = form.querySelector("button[type=submit]");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const templateParams = {
+      from_name:  document.getElementById("from_name").value.trim(),
+      from_email: document.getElementById("from_email").value.trim(),
+      from_phone: document.getElementById("from_phone").value.trim(),
+      subject:    document.getElementById("subject").value.trim(),
+      message:    document.getElementById("message").value.trim(),
     };
+    submitBtn.disabled  = true;
+    submitBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin mr-2"></i>Sending…';
+    formStatus.className = "text-center text-sm hidden";
+    try {
+      await emailjs.send("service_osi9mjb", "template_q62ydmp", templateParams);
+      formStatus.textContent = "✅ Message sent! I'll get back to you soon.";
+      formStatus.className   = "text-center text-sm text-green-400 block mt-2";
+      form.reset();
+    } catch (err) {
+      formStatus.textContent = "❌ Failed to send. Please email me directly.";
+      formStatus.className   = "text-center text-sm text-red-400 block mt-2";
+    } finally {
+      submitBtn.disabled  = false;
+      submitBtn.innerHTML = '<i class="bx bx-send mr-2"></i>Send Message';
+      setTimeout(() => { formStatus.className = "text-center text-sm hidden"; }, 6000);
+    }
+  });
 
-    // Send email using EmailJS
-    emailjs.send('service_osi9mjb', 'template_q62ydmp', templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Your message has been sent successfully!');
-            document.getElementById('contact-form').reset(); // Reset form after successful submission
-        }, function(error) {
-            console.log('FAILED...', error);
-            alert('Failed to send the message. Please try again later.');
-        });
+  /* 3D card tilt on projects */
+  document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `perspective(600px) rotateY(${x*8}deg) rotateX(${-y*6}deg) translateY(-6px)`;
+    });
+    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+  });
+
+  /* Back-to-top button */
+  const btt = document.createElement("button");
+  btt.innerHTML = '<i class="bx bx-up-arrow-alt text-xl"></i>';
+  btt.className = "fixed bottom-8 right-6 z-50 w-11 h-11 rounded-xl bg-[#6366f1] text-white flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none";
+  document.body.appendChild(btt);
+  window.addEventListener("scroll", () => {
+    const show = window.scrollY > 500;
+    btt.style.opacity       = show ? "1" : "0";
+    btt.style.pointerEvents = show ? "auto" : "none";
+    btt.style.transform     = show ? "translateY(0)" : "translateY(12px)";
+  }, { passive: true });
+  btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
 });
-
-// Page views
-const pageviewsEl = document.getElementById('pageviews');
-updatePageViews();
-
-function updatePageViews() {
-  fetch('https://api.countapi.xyz/hit/127.0.0.1/pageviews')
-  .then(response => response.json())
-  .then(data => {
-    pageviewsEl.innerHTML = data.value;
-  })
-  .catch(error => console.error('Error:', error));
-}
